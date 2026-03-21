@@ -9,15 +9,15 @@
 ### 1. 运行所有测试
 
 ```bash
-cd ~/git/oms/opencode-skills
+cd ~/git/oms/skills
 python3 test_framework.py
 ```
 
 ### 2. 测试指定技能
 
 ```bash
-python3 test_framework.py --skill inventory_realtime
-python3 test_framework.py --skill order_capture
+python3 test_framework.py --skill oms-inventory-realtime
+python3 test_framework.py --skill oms-order-capture
 ```
 
 ### 3. 运行示例流程
@@ -40,16 +40,16 @@ python3 test_framework.py --chain test_chains.json
 
 | 技能 | 测试用例 |
 |------|----------|
-| inventory_realtime | 查询库存、检查超卖、预扣库存、释放库存 |
-| inventory_ringfence | 设置圈围、释放圈围、检查可用、门店检查 |
-| order_capture | 订单标准化、黄牛检测、去重 |
-| one_id_merge | 用户识别、身份合并、冲突解决、用户画像 |
-| order_routing | 路由计算、订单拆分 |
-| promotion_engine | 优惠计算、发放优惠券、积分计算 |
-| profit_sharing | 佣金计算、利润分成、结算单生成 |
-| reconciliation | 账单核对、凭证生成、报表导出 |
-| returns_crosschannel | 资格检查、退款处理、换货处理 |
-| returns_logistics | 物流追踪、质量检验、缺陷分类 |
+| oms-inventory-realtime | 查询库存、检查超卖、预扣库存、释放库存 |
+| oms-inventory-ringfence | 设置圈围、释放圈围、检查可用、门店检查 |
+| oms-order-capture | 订单标准化、黄牛检测、去重 |
+| oms-one-id-merge | 用户识别、身份合并、冲突解决、用户画像 |
+| oms-order-routing | 路由计算、订单拆分 |
+| oms-promotion-engine | 优惠计算、发放优惠券、积分计算 |
+| oms-profit-sharing | 佣金计算、利润分成、结算单生成 |
+| oms-reconciliation | 账单核对、凭证生成、报表导出 |
+| oms-returns-crosschannel | 资格检查、退款处理、换货处理 |
+| oms-returns-logistics | 物流追踪、质量检验、缺陷分类 |
 
 ### 集成测试（技能链）
 
@@ -104,18 +104,18 @@ OMS Skills 自动化测试
 
 ```python
 # Step 1: 订单标准化
-result1 = run_skill("order_capture", "normalize", order_data)
+result1 = run_skill("oms-order-capture", "normalize", order_data)
 # 输出: {"order_id": "...", "customer": {...}, "items": [...]}
 
 # Step 2: 库存检查 (使用上一步的SKU)
-result2 = run_skill("inventory_realtime", "check_overselling", {
+result2 = run_skill("oms-inventory-realtime", "check_overselling", {
     "sku_id": result1["items"][0]["sku_id"],
     "quantity": result1["items"][0]["quantity"]
 })
 # 输出: {"risk_level": "LOW", "can_fulfill": True, ...}
 
 # Step 3: 促销计算
-result3 = run_skill("promotion_engine", "calculate_discount", {
+result3 = run_skill("oms-promotion-engine", "calculate_discount", {
     "order": {"order_id": result1["order_id"], "goods_amount": ...},
     "promotions": [...]
 })
@@ -156,14 +156,14 @@ TEST_CASES = {
 ## 目录结构
 
 ```
-opencode-skills/
+skills/
 ├── test_framework.py      # 测试框架主程序
 ├── test_chains.json       # 技能链测试用例
 ├── README.md              # 本文件
-├── inventory_realtime/
+├── oms-inventory-realtime/
 │   └── scripts/
 │       └── inventory_query.py
-├── order_capture/
+├── oms-order-capture/
 │   └── scripts/
 │       └── order_processor.py
 └── ...

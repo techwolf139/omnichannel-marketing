@@ -4,7 +4,7 @@
     "description": "测试从订单捕获到最终履约的完整流程",
     "steps": [
       {
-        "skill": "order_capture",
+        "skill": "oms-order-capture",
         "action": "normalize",
         "input": {
           "order": {
@@ -25,7 +25,7 @@
         }
       },
       {
-        "skill": "one_id_merge",
+        "skill": "oms-one-id-merge",
         "action": "identify",
         "input": {
           "identifier": {
@@ -35,7 +35,7 @@
         }
       },
       {
-        "skill": "inventory_realtime",
+        "skill": "oms-inventory-realtime",
         "action": "check_overselling",
         "input": {
           "sku_id": "SKU001",
@@ -43,7 +43,7 @@
         }
       },
       {
-        "skill": "promotion_engine",
+        "skill": "oms-promotion-engine",
         "action": "calculate_discount",
         "input": {
           "order": {
@@ -68,7 +68,7 @@
         }
       },
       {
-        "skill": "order_routing",
+        "skill": "oms-order-routing",
         "action": "route",
         "input": {
           "order": {
@@ -86,7 +86,7 @@
         }
       },
       {
-        "skill": "profit_sharing",
+        "skill": "oms-profit-sharing",
         "action": "calculate_commission",
         "input": {
           "order": {
@@ -116,7 +116,7 @@
     "description": "测试从退货申请到库存回收的完整流程",
     "steps": [
       {
-        "skill": "returns_crosschannel",
+        "skill": "oms-returns-crosschannel",
         "action": "check_eligibility",
         "input": {
           "order": {
@@ -132,7 +132,7 @@
         }
       },
       {
-        "skill": "returns_crosschannel",
+        "skill": "oms-returns-crosschannel",
         "action": "process_refund",
         "input": {
           "return_request": {
@@ -150,14 +150,14 @@
         }
       },
       {
-        "skill": "returns_logistics",
+        "skill": "oms-returns-logistics",
         "action": "track",
         "input": {
           "tracking_number": "RTN123456789"
         }
       },
       {
-        "skill": "returns_logistics",
+        "skill": "oms-returns-logistics",
         "action": "quality_check",
         "input": {
           "check_request": {
@@ -168,7 +168,7 @@
         }
       },
       {
-        "skill": "returns_logistics",
+        "skill": "oms-returns-logistics",
         "action": "classify_defect",
         "input": {
           "defect_info": {
@@ -179,7 +179,7 @@
         }
       },
       {
-        "skill": "inventory_ringfence",
+        "skill": "oms-inventory-ringfence",
         "action": "check",
         "input": {
           "sku_id": "SKU001",
@@ -194,7 +194,7 @@
     "description": "测试从账单核对到凭证生成的完整流程",
     "steps": [
       {
-        "skill": "reconciliation",
+        "skill": "oms-reconciliation",
         "action": "reconcile",
         "input": {
           "platform_bills": [
@@ -210,7 +210,7 @@
         }
       },
       {
-        "skill": "reconciliation",
+        "skill": "oms-reconciliation",
         "action": "generate_voucher",
         "input": {
           "bill": {
@@ -223,7 +223,7 @@
         }
       },
       {
-        "skill": "reconciliation",
+        "skill": "oms-reconciliation",
         "action": "export_report",
         "input": {
           "bills": [

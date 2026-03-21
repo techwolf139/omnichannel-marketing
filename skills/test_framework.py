@@ -12,43 +12,43 @@ from datetime import datetime
 
 # 技能脚本配置
 SKILLS = {
-    "inventory_realtime": {
+    "oms-inventory-realtime": {
         "script": "inventory_query.py",
         "actions": ["query", "check_overselling", "pre_reserve", "release"]
     },
-    "inventory_ringfence": {
+    "oms-inventory-ringfence": {
         "script": "ringfence_manager.py", 
         "actions": ["set_ringfence", "release_ringfence", "check", "store_check"]
     },
-    "order_capture": {
+    "oms-order-capture": {
         "script": "order_processor.py",
         "actions": ["normalize", "detect_scalper", "deduplicate"]
     },
-    "one_id_merge": {
+    "oms-one-id-merge": {
         "script": "one_id_manager.py",
         "actions": ["identify", "merge", "resolve_conflict", "build_profile"]
     },
-    "order_routing": {
+    "oms-order-routing": {
         "script": "order_router.py",
         "actions": ["route", "split"]
     },
-    "promotion_engine": {
+    "oms-promotion-engine": {
         "script": "promotion_calculator.py",
         "actions": ["calculate_discount", "issue_coupon", "calculate_points"]
     },
-    "profit_sharing": {
+    "oms-profit-sharing": {
         "script": "profit_calculator.py",
         "actions": ["calculate_commission", "distribute_profit", "generate_settlement"]
     },
-    "reconciliation": {
+    "oms-reconciliation": {
         "script": "reconciliation.py",
         "actions": ["reconcile", "generate_voucher", "export_report"]
     },
-    "returns_crosschannel": {
+    "oms-returns-crosschannel": {
         "script": "return_handler.py",
         "actions": ["check_eligibility", "process_refund", "process_exchange", "crosschannel_return"]
     },
-    "returns_logistics": {
+    "oms-returns-logistics": {
         "script": "return_logistics.py",
         "actions": ["track", "quality_check", "classify_defect", "recycle"]
     }
@@ -57,7 +57,7 @@ SKILLS = {
 
 # 测试用例数据
 TEST_CASES = {
-    "inventory_realtime": {
+    "oms-inventory-realtime": {
         "query": {
             "sku_id": "SKU001",
             "warehouse": "SH"
@@ -73,7 +73,7 @@ TEST_CASES = {
             "timeout_minutes": 15
         }
     },
-    "inventory_ringfence": {
+    "oms-inventory-ringfence": {
         "set_ringfence": {
             "sku_id": "SKU001",
             "channel": "douyin",
@@ -86,7 +86,7 @@ TEST_CASES = {
             "quantity": 10
         }
     },
-    "order_capture": {
+    "oms-order-capture": {
         "normalize": {
             "order": {
                 "order_id": "ORD_TEST_001",
@@ -112,7 +112,7 @@ TEST_CASES = {
             }
         }
     },
-    "one_id_merge": {
+    "oms-one-id-merge": {
         "identify": {
             "identifier": {"type": "phone", "value": "13800138000"}
         },
@@ -120,7 +120,7 @@ TEST_CASES = {
             "one_id": "OID_TEST_001"
         }
     },
-    "order_routing": {
+    "oms-order-routing": {
         "route": {
             "order": {
                 "order_id": "ORD_TEST_001",
@@ -145,7 +145,7 @@ TEST_CASES = {
             ]
         }
     },
-    "promotion_engine": {
+    "oms-promotion-engine": {
         "calculate_discount": {
             "order": {
                 "order_id": "ORD_TEST_001",
@@ -166,7 +166,7 @@ TEST_CASES = {
             ]
         }
     },
-    "profit_sharing": {
+    "oms-profit-sharing": {
         "calculate_commission": {
             "order": {
                 "order_id": "ORD_TEST_001",
@@ -188,7 +188,7 @@ TEST_CASES = {
             }
         }
     },
-    "reconciliation": {
+    "oms-reconciliation": {
         "reconcile": {
             "platform_bills": [
                 {"channel": "taobao", "order_id": "ORD001", "amount": 100.00},
@@ -200,7 +200,7 @@ TEST_CASES = {
             ]
         }
     },
-    "returns_crosschannel": {
+    "oms-returns-crosschannel": {
         "check_eligibility": {
             "order": {
                 "order_id": "ORD_TEST_001",
@@ -249,7 +249,7 @@ TEST_CASES = {
             ]
         }
     },
-    "returns_logistics": {
+    "oms-returns-logistics": {
         "track": {
             "tracking_number": "RTN123456789"
         },
@@ -470,16 +470,16 @@ def main():
         elif sys.argv[1] == "--example":
             # 运行示例流程测试
             example_chain = [
-                {"skill": "order_capture", "action": "normalize", "input": {"order": {
+                {"skill": "oms-order-capture", "action": "normalize", "input": {"order": {
                     "order_id": "ORD_TEST", "source_order_id": "TB123",
                     "channel": "taobao", "phone": "13800138000",
                     "receiver_address": "上海浦东", "items": [{"sku_code": "SKU001", "num": 1, "price": 100}],
                     "goods_amount": 100, "shipping_fee": 10, "discount_amount": 0, "total_amount": 110
                 }}},
-                {"skill": "inventory_realtime", "action": "check_overselling", "input": {
+                {"skill": "oms-inventory-realtime", "action": "check_overselling", "input": {
                     "sku_id": "SKU001", "quantity": 1
                 }},
-                {"skill": "promotion_engine", "action": "calculate_discount", "input": {
+                {"skill": "oms-promotion-engine", "action": "calculate_discount", "input": {
                     "order": {"order_id": "ORD_TEST", "goods_amount": 100, "items": []},
                     "promotions": [{"promo_id": "P1", "type": "COUPON", "discount_type": "FIXED",
                                    "discount_value": 10, "min_amount": 50, "start_time": "2024-01-01",
