@@ -465,8 +465,14 @@ def main():
         elif sys.argv[1] == "--chain":
             # 测试技能链 - 从文件读取
             with open(sys.argv[2], 'r') as f:
-                chain = json.load(f)
-            runner.run_action_tests(chain)
+                chains = json.load(f)
+            # 支持多个chain测试
+            for chain_name, chain_data in chains.items():
+                print(f"\n{'='*60}")
+                print(f"🔗 测试技能链: {chain_data.get('name', chain_name)}")
+                print(f"   描述: {chain_data.get('description', '')}")
+                print('='*60)
+                runner.run_action_tests(chain_data.get("steps", []))
         elif sys.argv[1] == "--example":
             # 运行示例流程测试
             example_chain = [
