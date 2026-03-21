@@ -9,7 +9,7 @@
 ### 1. 运行所有测试
 
 ```bash
-cd ~/git/oms/skills
+cd ./skills
 python3 test_framework.py
 ```
 

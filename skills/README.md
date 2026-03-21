@@ -29,7 +29,7 @@ Phase5 财务结算     → oms-profit-sharing, oms-reconciliation
 
 ## 设计文档
 
-详细设计文档位于: `/Users/mac/git/oms/docs/oms-skills/`
+详细设计文档位于: `./docs/oms-skills/`
 
 每个 skill 包含:
 - `SKILL.md` - OpenCode 技能定义
