@@ -1,6 +1,6 @@
 ---
 name: oms-one-id-merge
-description: "Use when needing to identify customers across channels, merge fragmented consumer identities, or query unified customer profiles. Triggers: customer lookup by phone/OpenID/UnionID, cross-channel purchase history, consumer profile queries."
+description: "Use when identifying customers across channels, merging fragmented consumer identities, or resolving cross-channel purchase history disputes. Triggers: customer lookup by phone/OpenID/UnionID, duplicate identity merge conflicts, incomplete customer profiles."
 ---
 
 # One-ID 归一与消费者画像融合
@@ -16,7 +16,7 @@ description: "Use when needing to identify customers across channels, merge frag
 - 合并碎片化的消费者画像
 - 构建精准营销人群包
 
-**触发词**: "查一下这个用户"、"消费者画像"、"全渠道"、"One-ID"、"合并身份"
+**触发词**: "查一下这个用户"、"消费者画像"、"全渠道"、"One-ID"、"合并身份"、"重复账户"
 
 ## Core Pattern
 

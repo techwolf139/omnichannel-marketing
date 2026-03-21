@@ -1,6 +1,6 @@
 ---
 name: oms-inventory-realtime
-description: "Use when checking stock levels, preventing overselling, or managing inventory across warehouses. Triggers: query available stock, check inventory, reserve stock, release reservation, inventory sync."
+description: "Use when checking stock levels, preventing overselling, or managing inventory across warehouses. Triggers: overselling incidents, stock level discrepancies, reservation failures, inventory sync delays."
 ---
 
 # 库存水位实时映射与防超卖
@@ -16,7 +16,7 @@ description: "Use when checking stock levels, preventing overselling, or managin
 - 大促前检查库存准备
 - 处理库存预占/释放
 
-**触发词**: "查库存"、"可售数量"、"库存预占"、"超卖"、"防超卖"
+**触发词**: "查库存"、"可售数量"、"库存预占"、"超卖"、"防超卖"、"库存不准"
 
 ## Core Pattern
 

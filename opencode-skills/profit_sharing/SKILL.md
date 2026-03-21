@@ -1,6 +1,6 @@
 ---
 name: oms-profit-sharing
-description: "Use when calculating profit distribution, querying commission details, or managing settlement rules. Triggers: query profit distribution, calculate commission, configure sharing rules, settlement query."
+description: "Use when calculating profit distribution, querying commission details, or managing settlement rules. Triggers: profit allocation disputes, commission calculation errors, settlement rule conflicts, performance attribution issues."
 ---
 
 # O2O利益分配与自动分润
@@ -16,7 +16,7 @@ description: "Use when calculating profit distribution, querying commission deta
 - 生成结算单
 - 查询结算状态
 
-**触发词**: "分润"、"佣金结算"、"业绩归属"、"利润分配"、"导购提成"
+**触发词**: "分润"、"佣金结算"、"业绩归属"、"利润分配"、"导购提成"、"分润查询"
 
 ## Core Pattern
 

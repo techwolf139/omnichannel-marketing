@@ -1,6 +1,6 @@
 ---
 name: oms-promotion-engine
-description: "Use when configuring marketing promotions, issuing coupons, calculating discounts, or managing loyalty points. Triggers: send coupon, create promotion, calculate discount, points redemption, cross-channel marketing rules."
+description: "Use when configuring marketing promotions, issuing coupons, calculating discounts, or managing loyalty points. Triggers: promotion rule conflicts, coupon eligibility issues, points calculation errors, cross-channel marketing failures."
 ---
 
 # 跨场景促销规则引擎
@@ -17,7 +17,7 @@ description: "Use when configuring marketing promotions, issuing coupons, calcul
 - 管理会员积分
 - 配置跨渠道营销规则
 
-**触发词**: "发优惠券"、"创建促销"、"计算折扣"、"积分"、"满减"
+**触发词**: "发优惠券"、"创建促销"、"计算折扣"、"积分"、"满减"、"促销规则"
 
 ## Core Pattern
 

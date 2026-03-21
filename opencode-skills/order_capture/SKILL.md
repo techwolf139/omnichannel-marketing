@@ -1,6 +1,6 @@
 ---
 name: oms-order-capture
-description: "Use when querying orders from multiple channels, reconciling platform bills, or identifying abnormal orders. Triggers: check orders by channel, sync orders, identify suspicious orders, order query by date/customer."
+description: "Use when querying orders from multiple channels, reconciling platform bills, or identifying abnormal orders. Triggers: order data inconsistencies, missing orders, suspicious order patterns, failed order syncs."
 ---
 
 # 全渠道订单汇聚与清洗
@@ -16,7 +16,7 @@ description: "Use when querying orders from multiple channels, reconciling platf
 - 识别异常/黄牛订单
 - 订单数据标准化
 
-**触发词**: "查订单"、"同步订单"、"渠道订单"、"异常订单"、"对账"
+**触发词**: "查订单"、"同步订单"、"渠道订单"、"异常订单"、"对账"、"订单丢失"
 
 ## Core Pattern
 

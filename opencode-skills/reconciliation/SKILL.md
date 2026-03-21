@@ -1,6 +1,6 @@
 ---
 name: oms-reconciliation
-description: "Use when reconciling multi-channel bills, generating financial vouchers, or exporting accounting reports. Triggers: generate reconciliation report, create voucher, sync bills, export financial statements."
+description: "Use when reconciling multi-channel bills, generating financial vouchers, or exporting accounting reports. Triggers: reconciliation discrepancies, voucher generation failures, bill sync errors, financial statement disputes."
 ---
 
 # 全渠道对账与财务凭证
@@ -16,7 +16,7 @@ description: "Use when reconciling multi-channel bills, generating financial vou
 - 生成财务凭证
 - 导出财务报表
 
-**触发词**: "对账"、"财务报表"、"凭证生成"、"账单核对"、"业财一体"
+**触发词**: "对账"、"财务报表"、"凭证生成"、"账单核对"、"业财一体"、"对账差异"
 
 ## Core Pattern
 

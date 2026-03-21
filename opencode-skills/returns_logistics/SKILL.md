@@ -1,6 +1,6 @@
 ---
 name: oms-returns-logistics
-description: "Use when tracking return packages, performing quality inspections, or managing defect classification. Triggers: track return, quality check, defect grading, inventory recycling, reverse logistics."
+description: "Use when tracking return packages, performing quality inspections, or managing defect classification. Triggers: return package tracking issues, quality check delays, defect grading disputes, inventory recycling failures."
 ---
 
 # 逆向物流与残次鉴定
@@ -16,7 +16,7 @@ description: "Use when tracking return packages, performing quality inspections,
 - 处理残次品
 - 生成维修工单
 
-**触发词**: "退货物流"、"质检鉴定"、"残次"、"库存再流转"、"逆向"
+**触发词**: "退货物流"、"质检鉴定"、"残次"、"库存再流转"、"逆向"、"退货追踪"
 
 ## Core Pattern
 

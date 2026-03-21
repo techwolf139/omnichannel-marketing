@@ -1,6 +1,6 @@
 ---
 name: oms-returns-crosschannel
-description: "Use when handling cross-channel returns, processing refunds, or managing exchange requests. Triggers: apply for return, cross-channel return, refund status, anywhere return, return eligibility check."
+description: "Use when handling cross-channel returns, processing refunds, or managing exchange requests. Triggers: return eligibility conflicts, cross-channel return failures, refund disputes, exchange request errors."
 ---
 
 # 跨渠道退换货协同
@@ -16,7 +16,7 @@ description: "Use when handling cross-channel returns, processing refunds, or ma
 - 处理仅退款
 - 审核退换货申请
 
-**触发词**: "退货"、"退换货"、"仅退款"、"跨渠道退货"、"查询退货"
+**触发词**: "退货"、"退换货"、"仅退款"、"跨渠道退货"、"查询退货"、"退货申请"
 
 ## Core Pattern
 

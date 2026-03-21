@@ -1,6 +1,6 @@
 ---
 name: oms-inventory-ringfence
-description: "Use when setting channel-exclusive inventory, protecting store stock during promotions, or managing store-as-warehouse operations. Triggers: set inventory isolation, protect store stock, enable store fulfillment, configure ringfence rules."
+description: "Use when setting channel-exclusive inventory, protecting store stock during promotions, or managing store-as-warehouse operations. Triggers: inventory isolation conflicts, store stock depletion during sales, fulfillment capability issues, ringfence rule violations."
 ---
 
 # 动态库存隔离与店仓一体化
@@ -16,7 +16,7 @@ description: "Use when setting channel-exclusive inventory, protecting store sto
 - 启用门店履约能力
 - 管理隔离规则
 
-**触发词**: "库存隔离"、"保护库存"、"门店发货"、"店仓一体"、"Ring-fencing"
+**触发词**: "库存隔离"、"保护库存"、"门店发货"、"店仓一体"、"Ring-fencing"、"安全库存"
 
 ## Core Pattern
 

@@ -1,6 +1,6 @@
 ---
 name: oms-order-routing
-description: "Use when determining fulfillment path, splitting/merging orders, or calculating optimal delivery route. Triggers: order allocation, route calculation, split order, merge orders, fulfillment path query."
+description: "Use when determining fulfillment path, splitting/merging orders, or calculating optimal delivery route. Triggers: order allocation failures, routing conflicts, split/merge decision errors, fulfillment path queries."
 ---
 
 # 智能订单路由与拆合单
@@ -16,7 +16,7 @@ description: "Use when determining fulfillment path, splitting/merging orders, o
 - 拆单或合单决策
 - 查询订单履约状态
 
-**触发词**: "路由订单"、"拆分订单"、"合并订单"、"履约路径"、"发货方"
+**触发词**: "路由订单"、"拆分订单"、"合并订单"、"履约路径"、"发货方"、"路由失败"
 
 ## Core Pattern
 
