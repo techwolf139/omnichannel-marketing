@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test artifacts
+skills/__pycache__/
+skills/*/__pycache__/
+skills/test_*.json
+skills/test_edge_cases.json
+skills/test_realistic_scenarios.json
+skills/*/tests/__pycache__/
+skills/*/tests/*.pyc
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store

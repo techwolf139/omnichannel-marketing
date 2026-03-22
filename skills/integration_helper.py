@@ -18,19 +18,24 @@ def run_skill_script(skill_name: str, action: str, input_data: dict) -> dict:
     """运行指定技能的脚本并返回JSON结果"""
     
     script_map = {
-        "inventory_realtime": "inventory_query.py",
-        "inventory_ringfence": "ringfence_manager.py",
-        "order_capture": "order_processor.py",
-        "one_id_merge": "one_id_manager.py",
-        "order_routing": "order_router.py",
-        "promotion_engine": "promotion_calculator.py",
-        "profit_sharing": "profit_calculator.py",
-        "reconciliation": "reconciliation.py",
-        "returns_crosschannel": "return_handler.py",
-        "returns_logistics": "return_logistics.py"
+        "oms-inventory-realtime": "inventory_query.py",
+        "oms-inventory-ringfence": "ringfence_manager.py",
+        "oms-order-capture": "order_processor.py",
+        "oms-one-id-merge": "one_id_manager.py",
+        "oms-order-routing": "order_router.py",
+        "oms-promotion-engine": "promotion_calculator.py",
+        "oms-profit-sharing": "profit_calculator.py",
+        "oms-reconciliation": "reconciliation.py",
+        "oms-returns-crosschannel": "return_handler.py",
+        "oms-returns-logistics": "return_logistics.py",
+        "oms-jd-integration": "client.py"
     }
     
-    script_path = SCRIPTS_DIR / skill_name / "scripts" / script_map.get(skill_name)
+    script_name = script_map.get(skill_name)
+    if not script_name:
+        return {"error": f"Unknown skill: {skill_name}"}
+    
+    script_path = SCRIPTS_DIR / skill_name / "scripts" / script_name
     
     if not script_path.exists():
         return {"error": f"Script not found: {script_path}"}
