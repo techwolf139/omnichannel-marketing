@@ -6,6 +6,8 @@
 
 | Skill | 名称 | 适用场景 |
 |-------|------|----------|
+| `oms-jd-integration` | 京东开放平台集成 | 京东订单同步、库存管理、物流追踪、退货处理 |
+| `oms-xhs-integration` | 小红书开放平台集成 | 笔记曝光数据、KOL合作管理、薯店/小程序订单、UTM归因 |
 | `oms-one-id-merge` | One-ID 归一与消费者画像融合 | 跨渠道身份识别、消费者画像查询 |
 | `oms-promotion-engine` | 跨场景促销规则引擎 | 创建促销、发放优惠券、积分管理 |
 | `oms-order-capture` | 全渠道订单汇聚与清洗 | 多平台订单查询、异常订单识别 |
@@ -20,6 +22,7 @@
 ## 业务阶段映射
 
 ```
+Phase0 平台对接     → oms-jd-integration, oms-xhs-integration
 Phase1 营销获客     → oms-one-id-merge, oms-promotion-engine
 Phase2 订单路由     → oms-order-capture, oms-order-routing
 Phase3 库存管理     → oms-inventory-realtime, oms-inventory-ringfence
@@ -40,6 +43,8 @@ Phase5 财务结算     → oms-profit-sharing, oms-reconciliation
 在 OpenCode 中，当用户询问相关业务问题时，AI Agent 会自动加载对应 skill。
 
 **触发示例**:
+- "查询京东订单状态" → 加载 `oms-jd-integration`
+- "同步小红书薯店订单" → 加载 `oms-xhs-integration`
 - "查一下手机号138****8888的消费者画像" → 加载 `oms-one-id-merge`
 - "帮我创建一个大促优惠券" → 加载 `oms-promotion-engine`
 - "查一下订单A123456的履约路径" → 加载 `oms-order-routing`
