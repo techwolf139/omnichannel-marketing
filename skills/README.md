@@ -6,6 +6,11 @@
 
 | Skill | 名称 | 适用场景 |
 |-------|------|----------|
+| `oms-content-creator` | 爆款文案生成引擎 | 标题生成、正文创作、脚本生成、热点匹配、多平台改写 |
+| `oms-wechat-ai-publisher` | 微信公众号自动发文 | 写稿排版、封面生成、草稿管理、定时发布 |
+| `oms-xiaohongshu-automation` | 小红书自动化 | 热点采集、笔记发布、数据查看 |
+| `oms-social-media-auto` | 全平台分发适配器 | 知乎/微博/小红书/X一键同步 |
+| `oms-bounty-hunter` | 开源任务接单 | GitHub悬赏任务、方案撰写、PR提交 |
 | `oms-jd-integration` | 京东开放平台集成 | 京东订单同步、库存管理、物流追踪、退货处理 |
 | `oms-xhs-integration` | 小红书开放平台集成 | 笔记曝光数据、KOL合作管理、薯店/小程序订单、UTM归因 |
 | `oms-one-id-merge` | One-ID 归一与消费者画像融合 | 跨渠道身份识别、消费者画像查询 |
@@ -23,11 +28,12 @@
 
 ```
 Phase0 平台对接     → oms-jd-integration, oms-xhs-integration
-Phase1 营销获客     → oms-one-id-merge, oms-promotion-engine
+Phase1 营销获客     → oms-content-creator, oms-wechat-ai-publisher, oms-xiaohongshu-automation, oms-social-media-auto, oms-one-id-merge, oms-promotion-engine
 Phase2 订单路由     → oms-order-capture, oms-order-routing
 Phase3 库存管理     → oms-inventory-realtime, oms-inventory-ringfence
 Phase4 售后服务     → oms-returns-crosschannel, oms-returns-logistics
 Phase5 财务结算     → oms-profit-sharing, oms-reconciliation
+Phase6 价值变现     → oms-bounty-hunter
 ```
 
 ## 设计文档
@@ -43,6 +49,11 @@ Phase5 财务结算     → oms-profit-sharing, oms-reconciliation
 在 OpenCode 中，当用户询问相关业务问题时，AI Agent 会自动加载对应 skill。
 
 **触发示例**:
+- "帮我写一个爆款标题" → 加载 `oms-content-creator`
+- "生成小红书风格的文案" → 加载 `oms-content-creator`
+- "发布微信公众号文章" → 加载 `oms-wechat-ai-publisher`
+- "同步内容到微博和知乎" → 加载 `oms-social-media-auto`
+- "搜索GitHub悬赏任务" → 加载 `oms-bounty-hunter`
 - "查询京东订单状态" → 加载 `oms-jd-integration`
 - "同步小红书薯店订单" → 加载 `oms-xhs-integration`
 - "查一下手机号138****8888的消费者画像" → 加载 `oms-one-id-merge`
